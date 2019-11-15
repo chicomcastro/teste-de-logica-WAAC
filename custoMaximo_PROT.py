@@ -1,6 +1,10 @@
+# Protótipo inicial a solução do problema
 # Autor: Francisco Castro
 # Data: 15/11/2019
-# Código desenvolvido em Python 3.7.0 32-bit
+# Codigo desenvolvido em Python 3.7.0 32-bit
+#
+# Esta solução não foi baseada em força bruta como se propôs e também resolve apenas
+# um subconjunto do espaço amostral.
 
 teste = input()
 
