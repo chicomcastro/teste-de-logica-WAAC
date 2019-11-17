@@ -17,6 +17,8 @@
 
 Para fins de prototipação e desenvolvimento de uma solução preliminar para o problema, optou-se, levando em consideração a relativa facilidade de desenvolvimento, entendimento e execução do código, pela linguagem Python.
 
+Uma vez desenvolvido o protótipo para a lógica do problema (core function), decidiu-se por desenvolver a solução Fullstack utilizando React.js como tecnologia front-end e uma estrutura de REST Api fornecida por dreamlo para prototipação de banco de dados como back-end.
+
 ## Estratégias para resolução
 
 O problema pode ser inicialmente encarado como a determinação do caminho de máximo custo de um grafo unidirecional, onde os nós têm custo zero e os arcos, custos predeterminados (ou vice-versa). A princípio, pensou-se em utilizar uma recursão para achar, usando força bruta, o caminho de custo máximo.
@@ -35,7 +37,7 @@ Os requisitos explicitamente dados pelo problema são:
 2. Um elemento só pode ser somando com um dos dois elementos mais próximos da próxima linha.
 3. Pode-se escolher qualquer linguagem de programação para resolução do problema.
 4. Há a necessidade de documentação do progresso, da estratégia e do código.
-5. O código receberá uma lista multidimensional como parâmetro.
+5. O código receberá uma única lista multidimensional como parâmetro por vez.
 6. Para cada etapa do processo da resolução para a soma do triângulo, deve-se:
 
 - Armazenar a lista inserida pelo usuário com um ID;
