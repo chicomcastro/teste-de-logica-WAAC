@@ -9,7 +9,7 @@ import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 
 import SimpleCard from './components/SimpleCard'
 import SimpleTable from './components/SimpleTable'
-import InputField from './components/InputField'
+import SolutionCardBody from './components/SolutionCardBody'
 
 const styles = () => ({
   root: {
@@ -61,26 +61,38 @@ const App = ({ classes }) => (
     <div className={classes.background} />
     <Grid container spacing={6} className={classes.root}>
       <Grid item xs={6}>
-      {
-        SimpleCard({
-          title: "Problema",
-          body: "Dado um triângulo de números, encontre o total máximo de cima para baixo."
-        })
-      }</Grid>
+        {
+          SimpleCard({
+            title: "Problema",
+            body: "Dado um triângulo de números, encontre o total máximo de cima para baixo."
+          }, () => {
+            return (
+              <Typography variant="body2" component="p" >
+                <br/>
+                Exemplo:<br/>
+                Input: [[6],[3,5],[9,7,1],[4,6,8,4]]<br/>
+                Output: 26
+              </Typography>
+            )
+          })
+        }
+      </Grid>
       <Grid item xs={6}>
-      {
-        SimpleCard({
-          title: "Solução",
-          body: null
-        }, () => InputField({ output: output, }))
-      }</Grid>
+        {
+          SimpleCard({
+            title: "Solução",
+            body: null
+          }, () => SolutionCardBody({ output: output, }))
+        }
+      </Grid>
       <Grid item xs={12}>
-      {
-        SimpleCard({
-          title: "Resultados",
-          body: null
-        }, () => SimpleTable())
-      }</Grid>
+        {
+          SimpleCard({
+            title: "Resultados",
+            body: null
+          }, () => SimpleTable())
+        }
+      </Grid>
     </Grid>
   </div>
 );

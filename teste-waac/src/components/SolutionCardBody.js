@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import MaxCost from '../MaxCost';
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -19,12 +20,19 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+var input = null;
+const defaultOutput = "Sem resposta";
+
 export default function SolutionCardBody(textFieldProps) {
     const classes = useStyles();
-    const [value, setValue] = React.useState('Controlled');
 
-    const handleChange = event => {
-        setValue(event.target.value);
+    const handleInputChange = event => {
+        input = event.target.value;
+    };
+
+    var [output, setName] = React.useState(defaultOutput);
+    const handleOutputChange = newOutput => {
+        setName(newOutput);
     };
 
     return (
@@ -35,6 +43,7 @@ export default function SolutionCardBody(textFieldProps) {
                     label="Input"
                     placeholder="Digite o triângulo"
                     multiline
+                    onChange={handleInputChange}
                     className={classes.textField}
                     margin="normal"
                     variant="outlined"
@@ -48,9 +57,10 @@ export default function SolutionCardBody(textFieldProps) {
                     disabled
                     id="standard-disabled"
                     label="Output"
-                    defaultValue={textFieldProps ? (textFieldProps.output ? textFieldProps.output : null) : null}
+                    value={output}
                     className={classes.textField}
                     margin="normal"
+                    variant="outlined"
                     InputLabelProps={{
                         shrink: true,
                     }}
@@ -60,7 +70,17 @@ export default function SolutionCardBody(textFieldProps) {
                 <Button
                     variant="contained"
                     color="primary"
-                    className={classes.button}>
+                    className={classes.button}
+                    onClick={() => {
+                        output = MaxCost(input);
+
+                        if (output) {
+                            handleOutputChange(output);
+                        }
+                        else {
+                            handleOutputChange(defaultOutput);
+                        }
+                    }}>
                     Calcular
                 </Button>
             </div>

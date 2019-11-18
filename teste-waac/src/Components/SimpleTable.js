@@ -10,25 +10,25 @@ import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 85 },
+  { id: 'code', label: 'ISO\u00a0Code', minWidth: 170 },
   {
     id: 'population',
     label: 'Population',
-    minWidth: 85,
+    minWidth: 170,
     align: 'right',
     format: value => value.toLocaleString(),
   },
   {
     id: 'size',
     label: 'Size\u00a0(km\u00b2)',
-    minWidth: 85,
+    minWidth: 170,
     align: 'right',
     format: value => value.toLocaleString(),
   },
   {
     id: 'density',
     label: 'Density',
-    minWidth: 85,
+    minWidth: 170,
     align: 'right',
     format: value => value.toFixed(2),
   },
