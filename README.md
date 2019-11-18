@@ -17,13 +17,11 @@
 
 Para fins de prototipação e desenvolvimento de uma solução preliminar para o problema, optou-se, levando em consideração a relativa facilidade de desenvolvimento, entendimento e execução do código, pela linguagem Python.
 
-Uma vez desenvolvido o protótipo para a lógica do problema (core function), decidiu-se por desenvolver a solução Fullstack utilizando React.js como tecnologia front-end e uma estrutura de REST Api fornecida por dreamlo para prototipação de banco de dados como back-end.
+Uma vez desenvolvido o protótipo para a lógica do problema (core function da aplicação), decidiu-se por desenvolver a solução Fullstack utilizando React.js como principal tecnologia para front-end e uma estrutura de REST Api fornecida por [dreamlo]<http://dreamlo.com/> para back-end.
 
-## Estratégias para resolução
+## Estratégias para o problema do triângulo
 
-O problema pode ser inicialmente encarado como a determinação do caminho de máximo custo de um grafo unidirecional, onde os nós têm custo zero e os arcos, custos predeterminados (ou vice-versa). A princípio, pensou-se em utilizar uma recursão para achar, usando força bruta, o caminho de custo máximo.
-
-Não especificou-se acerca do tamanho do triângulo, contudo, força bruta deve dar uma indicação preliminar da solução global e uma solução razoável para grafos pequenos, mesclando agilidade de desenvolvimento com tempo de execução mediano.
+O problema pode ser encarado como a determinação do caminho de máximo custo de um grafo unidirecional, onde os nós têm custo zero e os arcos, custos predeterminados (ou vice-versa), em semelhança ao algoritmo de Dijkstra. Com isso, utilizou-se uma recursão para achar, usando força bruta, o caminho de custo máximo.
 
 ## Etapas do planejamento
 
@@ -55,6 +53,7 @@ Considerou-se o uso de python para prototipação ágil da solução para o prob
 
 O programa espera, á priori, um input pelo usuário. Uma automatização do processo pode ser extendida a partir do uso dos métodos desenvolvidos.
 
-### 3. Prototipação da solução
+### 3. Proposta de solução
 
-O código protótipo pode ser visto [aqui](custoMaximo_PROT.py).
+O código protótipo pode ser visto [aqui](prototypes/custoMaximo_PROT.py).
+Ademais, uma proposta de solução fullstack pode ser conferida [aqui](teste-waac/).
