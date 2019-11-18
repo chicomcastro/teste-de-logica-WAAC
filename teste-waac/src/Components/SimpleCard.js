@@ -1,16 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     card: {
         minWidth: 275,
         width: '100%',
-        marginTop: 25,
+        height: '100%',
+        margin: 25,
     },
     bullet: {
         display: 'inline-block',
@@ -27,7 +26,6 @@ const useStyles = makeStyles({
 
 export default function SimpleCard(cardProps, customComponent) {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
     return (
         <Card className={classes.card}>
@@ -41,8 +39,8 @@ export default function SimpleCard(cardProps, customComponent) {
                 <Typography variant="body2" component="p">
                     {cardProps ? (cardProps.body ? cardProps.body : null) : null}
                 </Typography>
+                {customComponent ? customComponent() : null}
             </CardContent>
-            {customComponent ? customComponent() : null}
         </Card>
     );
 }
