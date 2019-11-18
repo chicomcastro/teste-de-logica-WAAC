@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Paper, Typography, Grid, Card, CardHeader, CardContent, Avatar, List, ListItem, ListItemText, IconButton, Button, CardActions } from "@material-ui/core";
+import { TextField, Paper, Typography, Grid, Card, CardHeader, CardContent, Avatar, List, ListItem, ListItemText, IconButton, Button, CardActions } from "@material-ui/core";
 
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ImageIcon from "@material-ui/icons/Image";
@@ -9,6 +9,7 @@ import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 
 import SimpleCard from './Components/SimpleCard'
 import SimpleTable from './Components/SimpleTable'
+import InputField from './Components/InputField'
 
 const styles = () => ({
   root: {
@@ -28,10 +29,9 @@ const styles = () => ({
   },
   background: {
     position: "absolute",
-    height: 200,
+    height: "100%",
     width: "100%",
     top: 0,
-    //background: "#7159C1"
   },
   rightContainer: {
     background:
@@ -49,37 +49,38 @@ const styles = () => ({
   information: {
     color: "#444"
   },
+  gridRow: {
+    flexDirection: 'row',
+  },
 });
+
+const output = null
 
 const App = ({ classes }) => (
   <div>
     <div className={classes.background} />
-    <Grid container className={classes.root}>
+    <Grid container spacing={6} className={classes.root}>
+      <Grid item xs={6}>
       {
         SimpleCard({
           title: "Problema",
-          subtitle: null,
           body: "Dado um triângulo de números, encontre o total máximo de cima para baixo."
         })
-      }
+      }</Grid>
+      <Grid item xs={6}>
       {
         SimpleCard({
           title: "Solução",
-          subtitle: null,
           body: null
-        })
-      }
+        }, () => InputField({ output: output, }))
+      }</Grid>
+      <Grid item xs={12}>
       {
         SimpleCard({
           title: "Resultados",
-          subtitle: null,
           body: null
         }, () => SimpleTable())
-      }
-      <Grid item xs={12}>
-        <Card className={classes.card}>
-        </Card>
-      </Grid>
+      }</Grid>
     </Grid>
   </div>
 );
