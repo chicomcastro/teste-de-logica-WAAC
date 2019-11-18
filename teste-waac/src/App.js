@@ -7,9 +7,9 @@ import ImageIcon from "@material-ui/icons/Image";
 import WorkIcon from "@material-ui/icons/Work";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 
-import SimpleCard from './Components/SimpleCard'
-import SimpleTable from './Components/SimpleTable'
-import InputField from './Components/InputField'
+import SimpleCard from './components/SimpleCard'
+import SimpleTable from './components/SimpleTable'
+import InputField from './components/InputField'
 
 const styles = () => ({
   root: {
